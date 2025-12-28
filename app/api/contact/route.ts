@@ -16,7 +16,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: "Gill Cleaning Services <onboarding@resend.dev>",
-      to: ["uddinmubeen70@gmail.com"], 
+      to: ["gillcleaningservicesltd@gmail.com"], 
       subject: "New Contact Form Enquiry",
       replyTo: email,
       html: `
