@@ -19,22 +19,25 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
+  async function handleSubmit() {
     setLoading(true);
     setStatus("");
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    if (res.ok) {
-      setStatus("Thank you! We will contact you shortly.");
-      setForm({ name: "", email: "", phone: "", message: "" });
-    } else {
-      setStatus("Something went wrong. Please try again.");
+      if (res.ok) {
+        setStatus("Thank you! We will contact you shortly.");
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setStatus("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setStatus("Network error. Please try again.");
     }
 
     setLoading(false);
@@ -43,13 +46,12 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white text-gray-900 pt-28">
       <div className="mx-auto max-w-3xl px-6">
-
         <h1 className="mb-8 text-center text-3xl md:text-4xl font-bold">
           Get a Quote
         </h1>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-
+        {/* ⚠️ onSubmit hata diya — onClick use ho raha */}
+        <form className="space-y-6">
           <div>
             <label className="block text-sm font-medium mb-1">
               Full Name
@@ -110,19 +112,18 @@ export default function ContactPage() {
           </div>
 
           <button
-            type="submit"
+            type="button"
+            onClick={handleSubmit}
             disabled={loading}
-            className="w-full rounded-lg bg-blue-600 py-3 text-white font-medium hover:bg-blue-700"
+            className="w-full rounded-lg bg-blue-600 py-3 text-white font-medium hover:bg-blue-700 disabled:opacity-60"
           >
             {loading ? "Sending..." : "Send Request"}
           </button>
 
           {status && (
-            <p className="text-center mt-4">{status}</p>
+            <p className="text-center mt-4 text-sm">{status}</p>
           )}
-
         </form>
-
       </div>
     </main>
   );
