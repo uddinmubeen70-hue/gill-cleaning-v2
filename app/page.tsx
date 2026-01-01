@@ -1,26 +1,16 @@
 export default function HomePage() {
   return (
-    <section className="relative w-full min-h-[calc(100vh-72px)] flex items-center justify-center text-center overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-center justify-center text-center overflow-hidden pt-16">
 
       {/* Background Image */}
       <img
         src="/home-bg.jpg"
         alt="Gill Cleaning Services"
-        className="
-          absolute inset-0 w-full h-full object-cover
-          brightness-110
-        "
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Responsive Dark Overlay */}
-      <div
-        className="
-          absolute inset-0
-          bg-black/35
-          sm:bg-black/45
-          md:bg-black/55
-        "
-      ></div>
+      {/* Overlay (balanced brightness) */}
+      <div className="absolute inset-0 bg-black/45"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl px-4 text-white">
@@ -34,29 +24,17 @@ export default function HomePage() {
           Quality Cleaning for a Safer, Healthier Workplace.
         </p>
 
-        {/* Buttons */}
         <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="/contact"
-            className="
-              bg-blue-600 hover:bg-blue-700
-              text-white px-6 py-3
-              rounded-md font-medium
-              transition
-            "
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition"
           >
             Get a Free Quote
           </a>
 
           <a
             href="/services"
-            className="
-              bg-white text-gray-900
-              px-6 py-3 rounded-md
-              font-medium
-              hover:bg-gray-200
-              transition
-            "
+            className="bg-white text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition"
           >
             View Services
           </a>

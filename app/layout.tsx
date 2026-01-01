@@ -2,6 +2,11 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+export const metadata = {
+  title: "Gill Cleaning Services",
+  description: "Professional cleaning services in New Zealand",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -9,9 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      {/* 👇 ADD suppressHydrationWarning */}
+      <body
+        suppressHydrationWarning
+        className="bg-white text-gray-900"
+      >
         <Header />
-        {children}
+        <main className="pt-16">{children}</main>
         <Footer />
       </body>
     </html>
