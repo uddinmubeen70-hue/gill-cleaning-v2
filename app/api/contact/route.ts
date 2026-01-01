@@ -16,7 +16,10 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: "Gill Cleaning Services <onboarding@resend.dev>",
-      to: ["gillcleaningservicesltd@gmail.com"], 
+      to: [
+        "gurdeepsingh2012@gmail.com",
+        "mubeen1984@gmail.com"
+      ],
       subject: "New Contact Form Enquiry",
       replyTo: email,
       html: `
@@ -29,7 +32,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error(error);
+    console.error("Email send error:", error);
     return NextResponse.json(
       { error: "Failed to send email" },
       { status: 500 }
