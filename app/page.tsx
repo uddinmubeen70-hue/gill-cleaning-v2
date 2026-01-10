@@ -1,45 +1,40 @@
 export default function HomePage() {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center text-center overflow-hidden pt-16">
+    <div className="relative w-full h-[85vh] flex items-center justify-center text-center">
 
-      {/* Background Image */}
       <img
         src="/home-bg.jpg"
-        alt="Gill Cleaning Services"
+        alt="Background"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Overlay (balanced brightness) */}
-      <div className="absolute inset-0 bg-black/45"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl px-4 text-white">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-          Professional Commercial Cleaning
-          <br />
-          Services in New Zealand
+      <div className="relative z-10 text-white px-4 drop-shadow-lg">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          Professional Commercial Cleaning<br />Services in New Zealand
         </h1>
 
-        <p className="mt-4 text-base sm:text-lg text-gray-200">
+        <p className="mt-4 text-lg md:text-xl text-gray-100">
           Quality Cleaning for a Safer, Healthier Workplace.
         </p>
 
-        <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="mt-8 flex gap-4 justify-center flex-wrap">
           <a
-            href="/contact"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition"
+            href="/quote"
+            className="px-6 py-3 bg-blue-600 rounded-lg text-white font-semibold hover:bg-blue-700"
           >
             Get a Free Quote
           </a>
 
           <a
             href="/services"
-            className="bg-white text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition"
+            className="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-300"
           >
             View Services
           </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

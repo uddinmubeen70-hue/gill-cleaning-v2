@@ -10,8 +10,7 @@ export default function AboutPage() {
           </h1>
           <p className="max-w-3xl mx-auto text-lg text-gray-700">
             A trusted professional cleaning company delivering reliable,
-            high-quality cleaning solutions for homes, offices, and
-            commercial spaces.
+            high-quality cleaning solutions across New Zealand.
           </p>
         </div>
 
@@ -20,52 +19,30 @@ export default function AboutPage() {
 
           {/* WHO WE ARE */}
           <div className="bg-white rounded-2xl p-10 shadow-sm">
-            <h2 className="text-2xl font-semibold mb-4">
-              Who We Are
-            </h2>
+            <h2 className="text-2xl font-semibold mb-4">Who We Are</h2>
             <p className="text-gray-700 mb-4">
               We are a dedicated team of experienced cleaning professionals
               focused on maintaining clean, safe, and hygienic environments.
-            </p>
-            <p className="text-gray-700">
-              From small offices to large commercial facilities, every space
-              is treated with the same care and professionalism.
             </p>
           </div>
 
           {/* WHY CHOOSE US */}
           <div className="bg-white rounded-2xl p-10 shadow-sm">
-            <h2 className="text-2xl font-semibold mb-4">
-              Why Choose Us
-            </h2>
+            <h2 className="text-2xl font-semibold mb-4">Why Choose Us</h2>
             <ul className="space-y-3 text-gray-700">
               <li>✔ Reliable & punctual service</li>
               <li>✔ Experienced & trained staff</li>
               <li>✔ High cleaning standards</li>
-              <li>✔ Safe & hygiene-focused practices</li>
-              <li>✔ Flexible cleaning schedules</li>
+              <li>✔ Safe & hygiene-focused practice</li>
             </ul>
           </div>
-
-        </div>
-
-        {/* COMMITMENT */}
-        <div className="bg-white rounded-2xl p-12 shadow-sm text-center mb-20">
-          <h2 className="text-2xl font-semibold mb-4">
-            Our Commitment
-          </h2>
-          <p className="max-w-3xl mx-auto text-gray-700">
-            We build long-term relationships by delivering dependable
-            cleaning services, clear communication, and consistent results
-            — every single time.
-          </p>
         </div>
 
         {/* CTA */}
         <div className="text-center">
           <a
             href="/contact"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 rounded-xl transition"
+            className="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl font-semibold"
           >
             Contact Us Today
           </a>
