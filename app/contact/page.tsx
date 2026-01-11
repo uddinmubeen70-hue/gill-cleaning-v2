@@ -7,8 +7,8 @@ export default function ContactPage() {
 
         <div className="bg-white p-8 shadow rounded-xl text-left">
           <p>📍 <strong>Location:</strong> Auckland, New Zealand</p>
-          <p>📞 <strong>Phone:</strong> 022 123 4567</p>
-          <p>📧 <strong>Email:</strong> info@gillcleaningservices.co.nz</p>
+          <p>📞 <strong>Phone:</strong> 02108375786</p>
+          <p>📧 <strong>Email:</strong> gillcleaningservicesltd@gmail.com</p>
           <p>⏰ <strong>Hours:</strong> Mon–Sat, 8 AM – 6 PM</p>
         </div>
 
