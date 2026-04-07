@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, phone, message } = await req.json();
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -15,24 +15,22 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-      from: "Gill Cleaning Services <onboarding@resend.dev>",
-      to: [
-        "gurdeepsingh2012@gmail.com",
-        "mubeen1984@gmail.com"
-      ],
+      from: "Gill Cleaning <info@gillcleaningservices.co.nz>",
+      to: ["gillcleaningservicesltd@gmail.com"],
       subject: "New Contact Form Enquiry",
       replyTo: email,
       html: `
         <h2>New Contact Enquiry</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
         <p><strong>Message:</strong><br/>${message}</p>
       `,
     });
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Email send error:", error);
+    console.error("Email error:", error);
     return NextResponse.json(
       { error: "Failed to send email" },
       { status: 500 }
